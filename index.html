@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>כותרת</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #ffffff;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 5em;
+      margin: 0;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    .down-button {
+      margin-top: 20px;
+      font-size: 2em;
+      padding: 10px 20px;
+      border: none;
+      background-color: transparent;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .down-button:hover {
+      transform: scale(1.1);
+      color: #ffcc00;
+    }
+
+    .section {
+      display: none;
+      padding: 60px 20px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 80px auto;
+      width: 80%;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      backdrop-filter: blur(5px);
+      color: white;
+    }
+
+    .section h2 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .section p {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+
+    .next-button {
+      padding: 10px 25px;
+      font-size: 2em;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .next-button:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+      color: black;
+      transform: scale(1.05);
+    }
+
+    .show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <h1>כותרת ענקית</h1>
+    <button class="down-button" onclick="showSection(0)">↓</button>
+  </div>
+
+  <div class="section" id="section0">
+    <h2>כותרת מלבן 1</h2>
+    <p>מידע</p><p>מידע</p><p>מידע</p><p>מידע</p><p>מידע</p>
+    <p>מידע</p><p>מידע</p><p>מידע</p><p>מידע</p>
+    <br><br><br>
+    <button class="next-button" onclick="showSection(1)">↓</button>
+  </div>
+
+  <div class="section" id="section1">
+    <h2>כותרת מלבן 2</h2>
+    <p>מידע</p><p>מידע</p><p>מידע</p><p>מידע</p><p>מידע</p>
+    <p>מידע</p><p>מידע</p><p>מידע</p><p>מידע</p>
+    <br><br><br>
+    <button class="next-button" onclick="showSection(2)">↓</button>
+  </div>
+
+  <div class="section" id="section2">
+    <h2>כותרת מלבן 3</h2>
+    <p>מידע</p><p>מידע</p><p>מידע</p><p>מידע</p><p>מידע</p>
+    <p>מידע</p><p>מידע</p><p>מידע</p><p>מידע</p>
+  </div>
+
+  <script>
+    function showSection(index) {
+      var section = document.getElementById("section" + index);
+      if (section) {
+        section.classList.add("show");
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  </script>
+
+</body>
+</html>
